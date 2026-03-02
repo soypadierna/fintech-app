@@ -1,3 +1,4 @@
+export 'icon_button_theme.dart';
 export "chip_theme.dart";
 export "divider_theme.dart";
 export "filled_button_theme.dart";

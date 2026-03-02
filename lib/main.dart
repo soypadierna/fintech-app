@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:fintech_app/core/theme/theme.dart';
 import 'package:fintech_app/features/customers/customers.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class FintechApp extends StatelessWidget {
     return MaterialApp(
       title: 'Nebula',
       debugShowCheckedModeBanner: false,
-      // theme: AppTheme.light,
+      theme: AppTheme.light,
       // darkTheme: AppTheme.dark,
       // themeMode: ref.watch(themeProvider),
 
