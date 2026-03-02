@@ -22,7 +22,7 @@ class customersCreateFormMobile extends StatelessWidget {
       backgroundColor: AppColors.white,
       body: Padding(
         //TODO: se van a estandarizar los paddings?
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.only(left: 24, right: 24, top: 48),
         child: ConstrainedBox(
           //TODO: medida global?
           constraints: BoxConstraints(minWidth: 420),
@@ -35,6 +35,7 @@ class customersCreateFormMobile extends StatelessWidget {
                     "Registrar Cliente",
                     style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                   ),
+                  //TODO: disminuir el tamaño del icono en mobile
                   IconButton.filled(onPressed: () {}, icon: Icon(Icons.close)),
                 ],
               ),
@@ -42,7 +43,10 @@ class customersCreateFormMobile extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [SizedBox(height: 8), Divider(), SignInEmailInput()],
+                children: [
+                  SignInEmailInput(),
+                  FilledButtonCustom(onPressed: () {}, label: "Continue"),
+                ],
               ),
             ],
           ),
@@ -61,24 +65,12 @@ class SignInEmailInput extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Text("Or continue with email address"),
         const SizedBox(height: 12),
         TextFormField(
           decoration: InputDecoration(
             labelText: "Email",
             prefixIcon: Icon(Icons.email_outlined),
             suffixIcon: Icon(Icons.check),
-          ),
-        ),
-        const SizedBox(height: 12),
-        FilledButtonCustom(onPressed: () {}, label: "Continue"),
-        Center(
-          child: Wrap(
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              Text("Don't have an account? "),
-              TextButton(onPressed: () {}, child: Text("Sign Up")),
-            ],
           ),
         ),
       ],

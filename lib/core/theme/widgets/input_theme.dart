@@ -9,11 +9,11 @@ InputDecorationTheme inputTheme() {
     isDense: true,
     alignLabelWithHint: true,
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(16),
       borderSide: BorderSide(color: AppColors.gray100)
     ),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(16),
       borderSide: BorderSide(color: AppColors.gray500)
     ),
     hintStyle: TextStyle(color: AppColors.gray500),
