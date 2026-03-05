@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   //TODO: Cambiar nombre de color
-static const Color primary = Color(0xFF8A73FE);     
+static const Color primary = Color(0xFF3768E9);     
 static const Color secondary = Color(0xFFBCD801);   
 static const Color background = Color(0xFF100A28);  
 static const Color surface = Color(0xFF190F59);      
@@ -19,6 +19,7 @@ static const Color gray200 = Color(0xFFE2E2E2);
 static const Color gray300 = Color(0xFFD4D4D4);
 static const Color gray500 = Color(0xFF9E9E9E);
 static const Color gray700 = Color(0xFF616161);
+static const Color gray800 = Color(0xFF484848);
 static const Color gray900 = Color(0xFF212121);
 }
 

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:fintech_app/core/theme/theme.dart';
 import 'package:fintech_app/core/responsive/responsive.dart';
+import 'package:fintech_app/core/theme/theme.dart';
+import 'package:fintech_app/features/customers/customers.dart';
 import 'package:fintech_app/shared/shared.dart';
 
 class CustomersCreate extends StatelessWidget {
@@ -56,6 +57,8 @@ class customersCreateFormMobile extends StatelessWidget {
   }
 }
 
+//TODO: cambiar nombre del widget
+//TODO: reorganizar los inputs
 class SignInEmailInput extends StatelessWidget {
   const SignInEmailInput({super.key});
 
@@ -65,10 +68,36 @@ class SignInEmailInput extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const SizedBox(height: 12),
+        const SizedBox(height: 24),
+        ImagePickerContainer(),
+        const SizedBox(height: 16),
         TextFormField(
           decoration: InputDecoration(
-            labelText: "Email",
+            labelText: "Nombre",
+            prefixIcon: Icon(Icons.person_outline),
+            suffixIcon: Icon(Icons.check),
+          ),
+        ),
+                const SizedBox(height: 16),
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: "Teléfono",
+            prefixIcon: Icon(Icons.phone_outlined),
+            suffixIcon: Icon(Icons.check),
+          ),
+        ),
+                const SizedBox(height: 16),
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: "Direccion",
+            prefixIcon: Icon(Icons.home_outlined),
+            suffixIcon: Icon(Icons.check),
+          ),
+        ),
+                const SizedBox(height: 16),
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: "Referencia",
             prefixIcon: Icon(Icons.email_outlined),
             suffixIcon: Icon(Icons.check),
           ),
