@@ -14,6 +14,7 @@ class CustomersCreate extends StatelessWidget {
   }
 }
 
+//TODO: el nombre esta bien?
 class customersCreateFormMobile extends StatelessWidget {
   const customersCreateFormMobile({super.key});
 
@@ -21,34 +22,33 @@ class customersCreateFormMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
+      appBar: AppBar(
+        title: Text("Registrar Cliente"),
+        actions: [IconButton.filled(onPressed: () {}, icon: Icon(Icons.close))],
+      ),
       body: Padding(
         //TODO: se van a estandarizar los paddings?
-        padding: const EdgeInsets.only(left: 24, right: 24, top: 48),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: ConstrainedBox(
           //TODO: medida global?
           constraints: BoxConstraints(minWidth: 420),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Registrar Cliente",
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                  ),
-                  //TODO: disminuir el tamaño del icono en mobile
-                  IconButton.filled(onPressed: () {}, icon: Icon(Icons.close)),
-                ],
+              SignInEmailInput(),
+              const SizedBox(height: 24),
+              ImagePickerContainer(),
+              const SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Nombre",
+                  prefixIcon: Icon(Icons.person_outline),
+                  suffixIcon: Icon(Icons.check),
+                ),
               ),
-
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SignInEmailInput(),
-                  FilledButtonCustom(onPressed: () {}, label: "Continue"),
-                ],
-              ),
+              const SizedBox(height: 16),
+              FilledButtonCustom(onPressed: () {}, label: "Continue"),
             ],
           ),
         ),
@@ -68,17 +68,6 @@ class SignInEmailInput extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const SizedBox(height: 24),
-        ImagePickerContainer(),
-        const SizedBox(height: 16),
-        TextFormField(
-          decoration: InputDecoration(
-            labelText: "Nombre",
-            prefixIcon: Icon(Icons.person_outline),
-            suffixIcon: Icon(Icons.check),
-          ),
-        ),
-                const SizedBox(height: 16),
         TextFormField(
           decoration: InputDecoration(
             labelText: "Teléfono",
@@ -86,7 +75,7 @@ class SignInEmailInput extends StatelessWidget {
             suffixIcon: Icon(Icons.check),
           ),
         ),
-                const SizedBox(height: 16),
+        const SizedBox(height: 16),
         TextFormField(
           decoration: InputDecoration(
             labelText: "Direccion",
@@ -94,7 +83,7 @@ class SignInEmailInput extends StatelessWidget {
             suffixIcon: Icon(Icons.check),
           ),
         ),
-                const SizedBox(height: 16),
+        const SizedBox(height: 16),
         TextFormField(
           decoration: InputDecoration(
             labelText: "Referencia",

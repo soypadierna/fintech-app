@@ -16,5 +16,6 @@ class AppTheme {
     dividerTheme: dividerTheme(),
     textButtonTheme: textButtonTheme(),
     iconButtonTheme: iconButtonTheme(),
+    appBarTheme: appBarTheme(),
   );
 }
